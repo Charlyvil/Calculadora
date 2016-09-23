@@ -1537,7 +1537,7 @@ public class Calculator extends javax.swing.JFrame {
 
             /* funcion de suma */ 
             case "+" :
-//                funSum();
+                funSum();
             break;
             
             /* funcion de resta */ 
@@ -1567,6 +1567,13 @@ public class Calculator extends javax.swing.JFrame {
        this.borrarValores();
 
     }
+    
+    public void funSum(){
+        double a = this.valor1;
+        double b = this.valor2;
+        this.resultado=a+b;
+    }
+    
     public void funDiv(){
         double a = this.valor1;
         double b = this.valor2;
