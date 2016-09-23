@@ -1792,11 +1792,19 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        // TODO add your handling code here:
+        if( this.Font > 26 ){
+            this.Font-=2;
+            jTextField1.setFont(jTextField1.getFont().deriveFont(this.Font));
+            jTextField2.setFont(jTextField2.getFont().deriveFont(this.Font));
+        }
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        // TODO add your handling code here:
+        if( this.Font < 50 ){
+            this.Font+=2;
+            jTextField1.setFont(jTextField1.getFont().deriveFont(this.Font));
+            jTextField2.setFont(jTextField2.getFont().deriveFont(this.Font));
+        }
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -1892,7 +1900,11 @@ public class Calculator extends javax.swing.JFrame {
     } 
 
     private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
-       
+        if( this.Font < 50 ){
+            this.Font+=2;
+            jTextField1.setFont(jTextField1.getFont().deriveFont(this.Font));
+            jTextField2.setFont(jTextField2.getFont().deriveFont(this.Font));
+        }    
     }//GEN-LAST:event_jButton50ActionPerformed
 
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
@@ -2188,7 +2200,11 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2KeyTyped
 
         private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        if( this.Font > 26 ){
+            this.Font-=2;
+            jTextField1.setFont(jTextField1.getFont().deriveFont(this.Font));
+            jTextField2.setFont(jTextField2.getFont().deriveFont(this.Font));
+        }
     }                                         
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {                                        
@@ -2508,4 +2524,5 @@ public class Calculator extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     int x, y, back;
     int variable = 0;
+    float Font = 36;
 }
