@@ -1567,7 +1567,7 @@ public class Calculator extends javax.swing.JFrame {
        this.borrarValores();
 
     }
-    
+    //Suma
     public void funSum(){
         double a = this.valor1;
         double b = this.valor2;
