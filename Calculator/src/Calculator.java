@@ -1547,7 +1547,7 @@ public class Calculator extends javax.swing.JFrame {
             
              /* funcion de divicion */ 
             case "/" :
-             //   funDiv();
+             funDiv();
             break;
             
             /* funcion de multiplicacion */ 
@@ -1566,7 +1566,12 @@ public class Calculator extends javax.swing.JFrame {
        txtGen.setText(  String.valueOf(this.resultado) );
        this.borrarValores();
 
-    }  
+    }
+    public void funDiv(){
+        double a = this.valor1;
+        double b = this.valor2;
+        this.resultado = a/b;
+    }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
          conPantalla(jButton5);
