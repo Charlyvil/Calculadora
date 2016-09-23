@@ -1572,6 +1572,14 @@ public class Calculator extends javax.swing.JFrame {
         double b = this.valor2;
         this.resultado = a/b;
     }
+    public void funSen(){
+       DecimalFormat objFormat=new DecimalFormat("#.#########");
+       double a = Integer.parseInt(jTextField2.getText());
+        if(jRadioButton2.isSelected()){
+            a=Math.toRadians(a);
+        }
+        jTextField2.setText(String.valueOf(objFormat.format(Math.sin(a))));
+    }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
          conPantalla(jButton5);
@@ -2055,7 +2063,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton52ActionPerformed
 
     private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
-       
+        funSen();
     }//GEN-LAST:event_jButton55ActionPerformed
 
     private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
