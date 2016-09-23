@@ -1710,6 +1710,34 @@ public class Calculator extends javax.swing.JFrame {
 
     private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
 
+        DecimalFormat objFormato=new DecimalFormat("#.#########");
+        double valor1 = Double.parseDouble(jTextField2.getText());
+        
+        
+        if(valor1 == 0)   //Restriccion en 0. Causa indeterminacion.
+        {
+
+            
+            jTextField2.setText("Math Err");
+        }
+        else
+        {
+        if(variable == 0)
+        {
+           
+            //System.out.println("El resultado es: "+  1/Math.sin( Math.toRadians(valor1))); Comprobar resultado
+            double resultado = 1/Math.sin( Math.toRadians(valor1));
+            jTextField2.setText(objFormato.format(resultado));
+        }
+        else if(variable == 1)
+            {
+                //System.out.println("El resultado es: "+ 1/Math.sin(valor1)); Comprobar reultado
+                double resultado = 1/Math.sin(valor1);
+                jTextField2.setText(objFormato.format(resultado));
+            }
+        
+        }
+            
     }//GEN-LAST:event_jButton48ActionPerformed
 
     private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
