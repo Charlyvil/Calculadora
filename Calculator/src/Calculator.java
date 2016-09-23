@@ -1552,7 +1552,7 @@ public class Calculator extends javax.swing.JFrame {
             
             /* funcion de multiplicacion */ 
             case "x" :
-              //  funMul();
+              funMul();
             break;
             
             case "^" :
@@ -1585,6 +1585,13 @@ public class Calculator extends javax.swing.JFrame {
         double b = this.valor2;
         this.resultado = a/b;
     }
+    
+    public void funMul(){
+        double a = this.valor1;
+        double b = this.valor2;
+        this.resultado=a*b;
+    }
+    
     public void funSen(){
         try{
         DecimalFormat objFormat=new DecimalFormat("#.#########");
