@@ -1,5 +1,6 @@
 import com.sun.awt.AWTUtilities;
 import java.awt.Color;
+import java.text.DecimalFormat;
 import javax.swing.*;
 
 public class Calculator extends javax.swing.JFrame {
@@ -1859,10 +1860,28 @@ public class Calculator extends javax.swing.JFrame {
 
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
 
+        DecimalFormat objFormato=new DecimalFormat("#.#########");
+        double valor1 = Double.parseDouble(jTextField2.getText());
+         if(variable == 1)
+        {
+           
+            //System.out.println("El resultado es: "+  Math.tan( Math.toRadians(valor1))); Comprobar resultado
+            double resultado = Math.tan( Math.toRadians(valor1));
+            jTextField2.setText(objFormato.format(resultado));
+        }
+        else
+        {
+            // System.out.println("El resultado es: "+ Math.tan(valor1)); Comprobar resultado
+            double resultado = Math.tan(valor1);
+            jTextField2.setText(objFormato.format(resultado));
+        }
+
+
     }//GEN-LAST:event_jButton53ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-    
+
+        variable = 1;
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -2040,4 +2059,5 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JLabel sombra;
     // End of variables declaration//GEN-END:variables
     int x, y, back;
+    int variable = 0;
 }
