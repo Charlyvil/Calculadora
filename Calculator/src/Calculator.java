@@ -1520,27 +1520,94 @@ public class Calculator extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // boton 0
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+         conPantalla(jButton2);
+    }                                        
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        this.extValores( jButton1.getText() );
         
-    }//GEN-LAST:event_jButton5ActionPerformed
+        //System.out.println( this.valor1 + " " + this.valor2 + " " + this.operacion );
+        
+        // decidir que operacion realizar segun la propiedad operacion
+        switch(operacion){
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-     
-    }//GEN-LAST:event_jButton18ActionPerformed
+            /* funcion de suma */ 
+            case "+" :
+//                funSum();
+            break;
+            
+            /* funcion de resta */ 
+            case "-" :
+              ////  funRes();
+            break;
+            
+             /* funcion de divicion */ 
+            case "/" :
+             //   funDiv();
+            break;
+            
+            /* funcion de multiplicacion */ 
+            case "x" :
+              //  funMul();
+            break;
+            
+            case "^" :
+              //  potencia();     // Uso de la funcion para calcular x elevado a una potencia y
+            break;
+
+        }
+        
+        // desplegar Resultado en la pantalla 
+       JTextField txtGen = this.verPantalla();
+       txtGen.setText(  String.valueOf(this.resultado) );
+       this.borrarValores();
+
+    }  
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+         conPantalla(jButton5);
+    }                                        
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        JTextField txtGen = this.verPantalla();
+        if( txtGen.getText().compareTo("Pi") != 0  && txtGen.getText().compareTo("e") != 0 )
+        {
+            char [] arreglo = txtGen.getText().toCharArray();
+            int i = txtGen.getText().length() - 1;
+        
+            if ( i > 0 ){
+
+                char [] arr2 = new char [i];
+                for( int k = 0 ; k < i ; k ++ )
+                    arr2[k] = arreglo[k];
+
+                txtGen.setText( String.valueOf(arr2));
+                // txtGen.setText( cam );
+            }
+            else
+                this.borrarPantalla();
+            
+        }
+        else
+            this.borrarPantalla();
+
+    }                                         
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
         x = evt.getX();
         y = evt.getY();
     }//GEN-LAST:event_jLabel3MousePressed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        this.extValores(jButton7.getText() );
+    }     
+    
     private void jLabel3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseDragged
        this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
     }//GEN-LAST:event_jLabel3MouseDragged
@@ -1664,9 +1731,10 @@ public class Calculator extends javax.swing.JFrame {
         back=1;
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-       
-    }//GEN-LAST:event_jButton17ActionPerformed
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        this.extValores(jButton17.getText() );
+    } 
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         
@@ -1680,25 +1748,97 @@ public class Calculator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton34ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-       
-    }//GEN-LAST:event_jButton20ActionPerformed
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton20);
+    }  
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-       
-    }//GEN-LAST:event_jButton22ActionPerformed
+        private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        this.extValores( jButton1.getText() );
+        
+        //System.out.println( this.valor1 + " " + this.valor2 + " " + this.operacion );
+        
+        // decidir que operacion realizar segun la propiedad operacion
+        switch(operacion){
+
+            /* funcion de suma */ 
+            case "+" :
+               // funSum();
+            break;
+            
+            /* funcion de resta */ 
+            case "-" :
+               // funRes();
+            break;
+            
+             /* funcion de divicion */ 
+            case "/" :
+               // funDiv();
+            break;
+            
+            /* funcion de multiplicacion */ 
+            case "x" :
+//                funMul();
+            break;
+            
+            case "^" :
+                //potencia();     // Uso de la funcion para calcular x elevado a una potencia y
+            break; 
+            
+            case "sqrt" :
+               // raiz();
+            break;
+            
+            case "M" :
+                
+            break; 
+        }
+        
+        // desplegar Resultado en la pantalla 
+       JTextField txtGen = this.verPantalla();
+       txtGen.setText(  String.valueOf(this.resultado) );
+       this.borrarValores();
+    }                                         
     
-    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-      
-    }//GEN-LAST:event_jButton36ActionPerformed
-
-    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton38ActionPerformed
-
-    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
+             // TODO add your handling code here:
+        // quitar el ultimo numero de la caja de texto
+        JTextField txtGen = this.verPantalla();
+        if( txtGen.getText().compareTo("Pi") != 0  && txtGen.getText().compareTo("e") != 0 )
+        {
+            char [] arreglo = txtGen.getText().toCharArray();
+            int i = txtGen.getText().length() - 1;
         
-    }//GEN-LAST:event_jButton41ActionPerformed
+            if ( i > 0 ){
+
+                char [] arr2 = new char [i];
+                for( int k = 0 ; k < i ; k ++ )
+                    arr2[k] = arreglo[k];
+
+                txtGen.setText( String.valueOf(arr2));
+                // txtGen.setText( cam );
+            }
+            else
+                this.borrarPantalla();
+            
+        }
+        else
+            this.borrarPantalla();
+        
+        
+    }                                         
+
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton38);
+    }                                         
+
+    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton41);
+    } 
 
     private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
        
@@ -1765,118 +1905,141 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton48ActionPerformed
 
     private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
-       
+         borrarPantalla();
+        borrarValores();
     }//GEN-LAST:event_jButton47ActionPerformed
 
-    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
-       
-    }//GEN-LAST:event_jButton44ActionPerformed
 
-    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
-      
-    }//GEN-LAST:event_jButton43ActionPerformed
+    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton44);
+    }                                         
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-       
-    }//GEN-LAST:event_jButton21ActionPerformed
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton43);
+    }                                         
 
-    private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
-        
-    }//GEN-LAST:event_jButton45ActionPerformed
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton21);
+    }                                         
 
-    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
-       
-    }//GEN-LAST:event_jButton40ActionPerformed
+    private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton45);
+    }      
 
-    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
-       
-    }//GEN-LAST:event_jButton42ActionPerformed
+      private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton40);
+    }                                         
 
-    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
-       
-    }//GEN-LAST:event_jButton46ActionPerformed
+    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton42);
+    }                                         
 
-    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
-      
-    }//GEN-LAST:event_jButton39ActionPerformed
+    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton46);
+    }                                         
 
-    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
-       
-    }//GEN-LAST:event_jButton37ActionPerformed
+    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton39);
+    }                                         
+
+    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton37);
+    }
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
       
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       
-    }//GEN-LAST:event_jButton8ActionPerformed
+   private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        conPantalla(jButton8);
+    }                                        
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-      
-    }//GEN-LAST:event_jButton9ActionPerformed
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+         conPantalla(jButton9);
+    }                                        
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+          conPantalla(jButton12);
+    }                                         
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton11);
+    }                                         
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton10);
+    }                                         
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton15);
+    }         
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+         conPantalla(jButton4);
+    }                                        
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+         conPantalla(jButton6);
+    }                                        
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+         conPantalla(jButton3);
+    }                                        
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        borrarPantalla();
+        borrarValores();
         
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }                                         
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-       
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-       
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-       
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-       
-        
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        this.extValores(jButton14.getText() );
       
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }                                         
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        this.extValores(jButton13.getText() );
       
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }                                         
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        
-    }//GEN-LAST:event_jButton13ActionPerformed
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        this.extValores(jButton19.getText() );
+    }                                         
 
-    }//GEN-LAST:event_jButton19ActionPerformed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-      
-    }//GEN-LAST:event_formWindowActivated
-
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
+        // TODO add your handling code here:
+        jTextField1.setText("0.0");
+        jTextField2.setText("0.0");
+    }       
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
       
     }//GEN-LAST:event_jButton23ActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-      
-    }//GEN-LAST:event_jButton24ActionPerformed
+   private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        this.extValores(jButton24.getText() );
+    }  
     
     private void jButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton54ActionPerformed
        
@@ -1973,45 +2136,227 @@ public class Calculator extends javax.swing.JFrame {
             evt.consume();      
     }//GEN-LAST:event_jTextField2KeyTyped
 
-    private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
+        private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {                                        
+
+    }                                       
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {                                       
+
+    }                                      
+
+    private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         conPantalla(jButton56);
+    }                                         
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {                                       
+
+    }                                      
+
+    private void jButton36MouseClicked(java.awt.event.MouseEvent evt) {                                       
+
+    }                                      
+
+    private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {                                       
+        // TODO add your handling code here:
+        this.extValores(jButton23.getText() );
+    }                                      
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        this.extValores(jButton26.getText() );
+    }                                         
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        this.extValores(jButton35.getText() );
+    }                                         
+
+    private void jButton38MouseClicked(java.awt.event.MouseEvent evt) {                                       
+        // TODO add your handling code here:
+        //this.extValores(jButton38.getText() );
+    }                                      
+    
+    /************************************ variables de la clase ************************************************************/
+    /***********************************************************************************************************************/
+    double valor1;
+    double valor2;
+    double resultado;
+    String operacion;
+    String menError = "Math Err";
+    
+    /************************************ metodos de la clase ************************************************************/
+    /***********************************************************************************************************************/
+   
+    // borar la pantalla de la calc.
+    public void borrarPantalla(){
+        jTextField1.setText("0");
+        jTextField2.setText("0");
+       // this.borrarValores();
+    }
+    
+    //borrar las variables internas de la clase
+    public void borrarValores( ){
+        this.valor2 = 0;
+        this.valor1 = 0;
+        this.resultado = 0;
+        this.operacion = null;
+    }
+    
+    // conseguir valores de la pantalla 
+    /********* este metodo debe usarse solo para las funciones que requieran de 2 valores ejemplo
+     *      
+     *      23 + 3 ; 334 -2 ; valor1 + valor 2
+     *      
+     * el metodo extrae los valores de la caja de texto y los guarda en las propiedades valor1 y valor 2
+     * tambien extrae el operador de la operacion solicitada y lo guarda en la propiedad operacion
+     */
+    public void       extValores  ( String textoOperacion ){
+        /* 
+          este metodo se utilizara al precionar los botones de operaciones, consigue el valor numerico de la 
+          pantalla (ya sea negativo o positivo) asigna este valor a las propiedades de la clase valor1, valor2
+          consigue una cadena que representa la operacion que se ha de realizar 
+        */
+        JTextField txt = new JTextField();
         
-    }//GEN-LAST:event_jButton49ActionPerformed
-
-    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
-
-    }//GEN-LAST:event_jTextField2FocusGained
-
-    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
-
-    }//GEN-LAST:event_jTextField2KeyPressed
-
-    private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
+        // verificar cual caja de texto esta siendo usada 
+        if( basica.isVisible() )
+            txt = jTextField1;
+        else
+            txt = jTextField2;
+        
+        try{
+            /// verificar si la pantalla esta vacia, tiene 0, o un numero 
+        if ( ( Double.parseDouble( txt.getText() ) == 0 ) ){           
+            if( textoOperacion == "-" || textoOperacion == "+"){
+               // System.out.println(" la caja esta vacia ");
+                txt.setText(textoOperacion);
+            }            
+         }    
+        else {
+            // verificar si se indica una cantidad negativa ( -134 ) o se trata de una operacion ( 124 -34 )
+            // si valor 1 esta vacio
+       
+            if ( valor1 == 0 && operacion == null  ){
+                if( txt.getText().compareTo("Pi") != 0 && txt.getText().compareTo("e") != 0 )
+                    this.valor1 = Double.parseDouble( txt.getText() );
+                    //System.out.println(valor1);
+                    else
+                {
+                    if( txt.getText().compareTo("Pi") == 0 || txt.getText().compareTo("e") == 0 ){
+                        switch( txt.getText() ){
+                            case "Pi": this.valor1 = Math.PI; break;
+                            case "e": this.valor1 = Math.E; break;
+                        }
+                    }
+                }
       
-    }//GEN-LAST:event_jButton56ActionPerformed
-
-    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
-
-    }//GEN-LAST:event_jButton18MouseClicked
-
-    private void jButton36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton36MouseClicked
-
-    }//GEN-LAST:event_jButton36MouseClicked
-
-    private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
-       
-    }//GEN-LAST:event_jButton23MouseClicked
-
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-       
-    }//GEN-LAST:event_jButton26ActionPerformed
-
-    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+                // conseguir el operador 
+                operacion = textoOperacion;
+                //System.out.println(operacion);
+                borrarPantalla();
+            }
+            // si valor1 no esta vacio, fue capturado el primer numero, se debe capturar el operador 
+            else
+            {
+                // capturar valor 2
+                if( valor1 != 0 && operacion != null && ( txt.getText() != "-" || txt.getText() != "+" )  ){   
+                    
+                    if( txt.getText().compareTo("Pi") != 0 && txt.getText().compareTo("e") != 0 )
+                        this.valor2 = Double.parseDouble( txt.getText() );
+                    //System.out.println(valor1);
+                    else
+                    {
+                        switch( txt.getText() ){
+                            case "Pi": this.valor2 = Math.PI; break;
+                            case "e": this.valor2 = Math.E; break;
+                        }
+                    }
+                }
+            }    
+        }
+        }
+        catch( Exception exp ){
+            txt.setText(this.menError);
+        }
+  
+    }
+    
+    /********* este metodo debe usarse solo para las funciones que requieran de un solo parametro
+     *      
+     *      sen x; tan y ; etc = funcion (valor1)
+     *      
+     * el metodo extrae los valores de la caja de texto y los guarda en las propiedades valor1 
+     * tambien extrae el operador de la operacion solicitada y lo guarda en la propiedad operacion
+     */
+    public void       extValor    ( String textoOperacion ){
+        JTextField txt = new JTextField();
         
-    }//GEN-LAST:event_jButton35ActionPerformed
-
-    private void jButton38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton38MouseClicked
-       
-    }//GEN-LAST:event_jButton38MouseClicked
+        // verificar cual caja de texto esta siendo usada 
+        if( basica.isVisible() )
+            txt = jTextField1;
+        else
+            txt = jTextField2;
+        
+        // Asigna la operacion a realizar en la propiedad 'operacion'
+        this.operacion = textoOperacion;
+        
+        /// verificar si la pantalla tiene un signo de operacion + o -
+            if ( txt.getText() == "+" || txt.getText() == "-" ){
+                txt.setText(this.menError);
+            }    
+            else {
+                this.valor1 = Double.parseDouble(txt.getText());
+            }
+    }
+    
+    public JTextField verPantalla(){
+        
+        JTextField txtGen = new JTextField ();
+        
+        if( basica.isVisible() )
+            txtGen = jTextField1;
+        else
+            txtGen = jTextField2;
+        
+        return txtGen;
+    }
+    
+    /* este metodo verifica si la pantalla es 0.0 y debe concatenar el numero 91234 al escribir o 
+       debe reemplazar el 0 con un numero */
+    public void       conPantalla(JButton botonNumero ){
+        
+        // conseguir la caja de texto del context acutal 
+        JTextField txtGen = this.verPantalla();
+        
+        
+        try{
+            
+            // verificar si es 0 
+            if( Double.parseDouble(txtGen.getText()) == 0 ){
+                txtGen.setText( botonNumero.getText() );
+            }
+            else
+            {
+              String TextoPantalla = txtGen.getText();
+              txtGen.setText( TextoPantalla + botonNumero.getText());
+            }
+        }
+        catch( Exception ex ){
+             if( txtGen.getText().compareTo("+") == 0 || txtGen.getText().compareTo("-") == 0  ){
+                String TextoPantalla = txtGen.getText();
+                txtGen.setText( TextoPantalla + botonNumero.getText());
+            }
+        }
+        
+        
+        
+    }
+    
     
     public static void main(String args[]) {
         
