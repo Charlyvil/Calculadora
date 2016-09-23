@@ -1573,12 +1573,30 @@ public class Calculator extends javax.swing.JFrame {
         this.resultado = a/b;
     }
     public void funSen(){
+        try{
+        DecimalFormat objFormat=new DecimalFormat("#.#########");
+        double a = Integer.parseInt(jTextField2.getText());
+        if(jRadioButton2.isSelected()){
+            a=Math.toRadians(a);
+        }
+        jTextField2.setText(String.valueOf(objFormat.format(Math.sin(a))));
+        }
+       catch( Exception e){
+           jTextField2.setText("Error");
+       }
+    }
+    public void funCos(){
+       try{
        DecimalFormat objFormat=new DecimalFormat("#.#########");
        double a = Integer.parseInt(jTextField2.getText());
         if(jRadioButton2.isSelected()){
             a=Math.toRadians(a);
         }
-        jTextField2.setText(String.valueOf(objFormat.format(Math.sin(a))));
+        jTextField2.setText(String.valueOf(objFormat.format(Math.cos(a))));
+       }
+       catch( Exception e){
+           jTextField2.setText("Error");
+       }
     }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
@@ -2055,7 +2073,7 @@ public class Calculator extends javax.swing.JFrame {
     }  
     
     private void jButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton54ActionPerformed
-       
+        funCos();
     }//GEN-LAST:event_jButton54ActionPerformed
 
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
