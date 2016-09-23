@@ -1542,7 +1542,7 @@ public class Calculator extends javax.swing.JFrame {
             
             /* funcion de resta */ 
             case "-" :
-              ////  funRes();
+                funRes();
             break;
             
              /* funcion de divicion */ 
@@ -1572,6 +1572,12 @@ public class Calculator extends javax.swing.JFrame {
         double a = this.valor1;
         double b = this.valor2;
         this.resultado=a+b;
+    }
+    
+    public void funRes(){
+        double a = this.valor1;
+        double b = this.valor2;
+        this.resultado=a-b;
     }
     
     public void funDiv(){
