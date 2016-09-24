@@ -1558,6 +1558,10 @@ public class Calculator extends javax.swing.JFrame {
             case "^" :
               //  potencia();     // Uso de la funcion para calcular x elevado a una potencia y
             break;
+                
+            case "M" :
+              funMod();
+            break;
 
         }
         
@@ -1617,6 +1621,20 @@ public class Calculator extends javax.swing.JFrame {
        catch( Exception e){
            jTextField2.setText("Error");
        }
+    }
+    
+    public void funMod()
+    {
+        double a = this.valor1;
+        double b = this.valor2;
+        resultado = a % b;
+        
+        /*if(b==0){
+            jTextField1.setText(menError);
+        }
+        else{
+            resultado = a % b;
+        }*/
     }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
@@ -1783,8 +1801,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
-        this.extValores(jButton17.getText() );
+        funMod();
     } 
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -1849,7 +1866,7 @@ public class Calculator extends javax.swing.JFrame {
             break;
             
             case "M" :
-                
+                funMod();
             break; 
         }
         
@@ -2117,7 +2134,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton55ActionPerformed
 
     private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
-       
+        funMod();
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
@@ -2185,7 +2202,17 @@ public class Calculator extends javax.swing.JFrame {
     }    
     
     private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
-       
+        DecimalFormat num=new DecimalFormat("#.#########");
+        double valor1 = Double.parseDouble(jTextField2.getText());
+         if(variable == 1)
+        {
+            double resultado = Math.log( Math.toRadians(valor1));
+            jTextField2.setText(num.format(resultado));
+        }
+        else
+        {   double resultado = Math.log(valor1);
+            jTextField2.setText(num.format(resultado));
+        }
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
@@ -2210,12 +2237,11 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton53ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-
         variable = 1;
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-       
+        variable = 0;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
@@ -2471,11 +2497,7 @@ public class Calculator extends javax.swing.JFrame {
                 txtGen.setText( TextoPantalla + botonNumero.getText());
             }
         }
-        
-        
-        
     }
-    
     
     public static void main(String args[]) {
         
