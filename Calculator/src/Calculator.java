@@ -1628,13 +1628,6 @@ public class Calculator extends javax.swing.JFrame {
         double a = this.valor1;
         double b = this.valor2;
         resultado = a % b;
-        
-        /*if(b==0){
-            jTextField1.setText(menError);
-        }
-        else{
-            resultado = a % b;
-        }*/
     }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
@@ -1801,7 +1794,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        funMod();
+        this.extValores(jButton17.getText());
     } 
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -2134,7 +2127,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton55ActionPerformed
 
     private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
-        funMod();
+        this.extValores(jButton17.getText());
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
