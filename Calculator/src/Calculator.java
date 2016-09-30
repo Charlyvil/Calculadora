@@ -2,7 +2,7 @@ import com.sun.awt.AWTUtilities;
 import java.awt.Color;
 import java.text.DecimalFormat;
 import javax.swing.*;
-
+        
 public class Calculator extends javax.swing.JFrame {
 
     public Calculator() {
@@ -1537,7 +1537,7 @@ public class Calculator extends javax.swing.JFrame {
 
             /* funcion de suma */ 
             case "+" :
-                funSum();
+                funSum(valor1, valor2);
             break;
             
             /* funcion de resta */ 
@@ -1562,7 +1562,9 @@ public class Calculator extends javax.swing.JFrame {
             case "M" :
               funMod();
             break;
-
+            
+            
+            
         }
         
         // desplegar Resultado en la pantalla 
@@ -1572,10 +1574,11 @@ public class Calculator extends javax.swing.JFrame {
 
     }
     //Suma
-    public void funSum(){
+    public double funSum(double valor1, double valor2){
         double a = this.valor1;
         double b = this.valor2;
-        this.resultado=a+b;
+        return resultado=a+b;
+        
     }
     
     public void funRes(){
@@ -1636,6 +1639,88 @@ public class Calculator extends javax.swing.JFrame {
             resultado = a % b;
         }*/
     }
+    
+    public void funTan(double valor1, int variable)
+    {
+        DecimalFormat objFormato=new DecimalFormat("#.#########");
+        double valor = Double.parseDouble(jTextField2.getText());
+         if(variable == 0)
+        {
+           
+            //System.out.println("El resultado es: "+  Math.tan( Math.toRadians(valor1))); Comprobar resultado
+            double resultado = Math.tan( Math.toRadians(valor));
+            jTextField2.setText(objFormato.format(resultado));
+        }
+        else
+        {
+            // System.out.println("El resultado es: "+ Math.tan(valor1)); Comprobar resultado
+            double resultado = Math.tan(valor);
+            jTextField2.setText(objFormato.format(resultado));
+        }
+
+    }
+    
+    public void funCot(double valor1, int variable)
+    {
+        DecimalFormat objFormato=new DecimalFormat("#.#########");
+        valor1 = Double.parseDouble(jTextField2.getText());
+        
+        
+        if(valor1 == 0)   //Restriccion en 0. Causa indeterminacion.
+        {
+
+            
+            jTextField2.setText("Math Err");
+        }
+        else
+        {
+        if(variable == 0)
+        {
+           
+            //System.out.println("El resultado es: "+  1/Math.sin( Math.toRadians(valor1))); Comprobar resultado
+            double resultado = 1/Math.sin( Math.toRadians(valor1));
+            jTextField2.setText(objFormato.format(resultado));
+        }
+        else if(variable == 1)
+            {
+                //System.out.println("El resultado es: "+ 1/Math.sin(valor1)); Comprobar reultado
+                double resultado = 1/Math.sin(valor1);
+                jTextField2.setText(objFormato.format(resultado));
+            }
+        
+        }
+        
+    }
+    
+    
+    private void funSec(double valor1, int variable)
+    {
+        DecimalFormat objFormato=new DecimalFormat("#.#########");
+        valor1 = Double.parseDouble(jTextField2.getText());
+        
+        
+        if(variable == 0)
+        {
+           if(valor1 == 90 || valor1 == -90)   //Restriccion en 90 y -90. Causa indeterminacion.
+           {
+               jTextField2.setText("Math Err");
+           }
+           else
+           {
+            //System.out.println("El resultado es: "+  1/Math.cos( Math.toRadians(valor1))); Comprobar resultado
+            double resultado = 1/Math.cos( Math.toRadians(valor1));
+            jTextField2.setText(objFormato.format(resultado));
+           }
+        }
+        else if(variable == 1)
+        {
+            //System.out.println("El resultado es: "+ 1/Math.cos(valor1)); Comprobar reultado
+            double resultado = 1/Math.cos(valor1);
+            jTextField2.setText(objFormato.format(resultado));
+        }
+
+    }
+    
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
          conPantalla(jButton5);
@@ -1868,6 +1953,8 @@ public class Calculator extends javax.swing.JFrame {
             case "M" :
                 funMod();
             break; 
+            
+            
         }
         
         // desplegar Resultado en la pantalla 
@@ -1926,61 +2013,13 @@ public class Calculator extends javax.swing.JFrame {
 
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
 
-        DecimalFormat objFormato=new DecimalFormat("#.#########");
-        double valor1 = Double.parseDouble(jTextField2.getText());
-        
-        
-        if(variable == 0)
-        {
-           if(valor1 == 90 || valor1 == -90)   //Restriccion en 90 y -90. Causa indeterminacion.
-           {
-               jTextField2.setText("Math Err");
-           }
-           else
-           {
-            //System.out.println("El resultado es: "+  1/Math.cos( Math.toRadians(valor1))); Comprobar resultado
-            double resultado = 1/Math.cos( Math.toRadians(valor1));
-            jTextField2.setText(objFormato.format(resultado));
-           }
-        }
-        else if(variable == 1)
-        {
-            //System.out.println("El resultado es: "+ 1/Math.cos(valor1)); Comprobar reultado
-            double resultado = 1/Math.cos(valor1);
-            jTextField2.setText(objFormato.format(resultado));
-        }
-
+        funSec(valor1, variable);
     }//GEN-LAST:event_jButton51ActionPerformed
 
     private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
 
-        DecimalFormat objFormato=new DecimalFormat("#.#########");
-        double valor1 = Double.parseDouble(jTextField2.getText());
+        funCot(valor1,variable);
         
-        
-        if(valor1 == 0)   //Restriccion en 0. Causa indeterminacion.
-        {
-
-            
-            jTextField2.setText("Math Err");
-        }
-        else
-        {
-        if(variable == 0)
-        {
-           
-            //System.out.println("El resultado es: "+  1/Math.sin( Math.toRadians(valor1))); Comprobar resultado
-            double resultado = 1/Math.sin( Math.toRadians(valor1));
-            jTextField2.setText(objFormato.format(resultado));
-        }
-        else if(variable == 1)
-            {
-                //System.out.println("El resultado es: "+ 1/Math.sin(valor1)); Comprobar reultado
-                double resultado = 1/Math.sin(valor1);
-                jTextField2.setText(objFormato.format(resultado));
-            }
-        
-        }
             
     }//GEN-LAST:event_jButton48ActionPerformed
 
@@ -2217,22 +2256,7 @@ public class Calculator extends javax.swing.JFrame {
 
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
 
-        DecimalFormat objFormato=new DecimalFormat("#.#########");
-        double valor1 = Double.parseDouble(jTextField2.getText());
-         if(variable == 1)
-        {
-           
-            //System.out.println("El resultado es: "+  Math.tan( Math.toRadians(valor1))); Comprobar resultado
-            double resultado = Math.tan( Math.toRadians(valor1));
-            jTextField2.setText(objFormato.format(resultado));
-        }
-        else
-        {
-            // System.out.println("El resultado es: "+ Math.tan(valor1)); Comprobar resultado
-            double resultado = Math.tan(valor1);
-            jTextField2.setText(objFormato.format(resultado));
-        }
-
+        funTan(valor1,variable);
 
     }//GEN-LAST:event_jButton53ActionPerformed
 
