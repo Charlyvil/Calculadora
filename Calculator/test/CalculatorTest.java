@@ -43,14 +43,15 @@ public class CalculatorTest {
      */
     @Test
     public void testFunSum() {
-        System.out.println("funSum");
-        double a = 2;
-        double b =3;
+        System.out.println("Verificando Suma");
         Calculator instance = new Calculator();
-        double expResult = 5; 
-        double result = instance.funSum(a,b);
+        double expresult=3;
+        double result=instance.funSum(1,2);
+        assertEquals(expresult,result,0);
+        double expresult2=7;
+        double result2=instance.funSum(2,5);
+        assertEquals(expresult2,result2,0);
         // TODO review the generated test code and remove the default call to fail.
-        assertEquals(expResult, result, 5.0);
     }
 
     /**

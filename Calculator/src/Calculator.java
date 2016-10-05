@@ -1537,12 +1537,12 @@ public class Calculator extends javax.swing.JFrame {
 
             /* funcion de suma */ 
             case "+" :
-                funSum(valor1, valor2);
+                funSum(valor1,valor2);
             break;
             
             /* funcion de resta */ 
             case "-" :
-                funRes();
+                funRes(valor1,valor2);
             break;
             
              /* funcion de divicion */ 
@@ -1552,7 +1552,7 @@ public class Calculator extends javax.swing.JFrame {
             
             /* funcion de multiplicacion */ 
             case "x" :
-              funMul();
+              funMul(valor1,valor2);
             break;
             
             case "^" :
@@ -1574,17 +1574,13 @@ public class Calculator extends javax.swing.JFrame {
 
     }
     //Suma
-    public double funSum(double valor1, double valor2){
-        double a = this.valor1;
-        double b = this.valor2;
+    public double funSum(double a, double b){
         return resultado=a+b;
         
     }
     
-    public void funRes(){
-        double a = this.valor1;
-        double b = this.valor2;
-        this.resultado=a-b;
+    public double funRes(double a, double b){
+        return resultado=a-b;
     }
     
     public void funDiv(){
@@ -1593,10 +1589,8 @@ public class Calculator extends javax.swing.JFrame {
         this.resultado = a/b;
     }
     
-    public void funMul(){
-        double a = this.valor1;
-        double b = this.valor2;
-        this.resultado=a*b;
+    public double funMul(double a, double b){
+        return resultado=a*b;
     }
     
     public void funSen(){
